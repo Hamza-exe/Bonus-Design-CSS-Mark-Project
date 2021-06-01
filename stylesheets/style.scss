@@ -1,0 +1,235 @@
+/*Stating variables for elements mentioned and used alot, the font used throughout the website, the paragraph and heading color background, and the color of the nav, photo background, etc.*/
+$animationcolor: #393939; 
+$textbgcolor: #a3a1a6;
+$font:  Tahoma, Arial, sans-serif;
+
+/* Line of code sourced from: https://css-tricks.com/perfect-full-page-background-image/  used for sizing background*/
+html { 
+    background: url(../images/Background1.png) no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100% 100%;
+}
+
+/* sizes the body */
+body {
+    height: 100%;
+}
+
+/* used for the heading and guves it margin top for aesthetic purposes for the background */
+#heading{
+    margin-top: 245px;
+}
+
+/* used to create a CSS Grid for the collection of photos to organize the content in the best most effecient way possible and resize the images to all fit and prevent distortion of the photos. */
+.restored{
+
+    /*Width as such to be consistent with current use of page size like other elements*/
+    width: 96.5%;
+    height: 100%;
+
+    /*margin as such to stay consistent with other elements*/
+    margin-left: 22.5px;
+    display: grid;
+    align-items: center;
+
+    /*to provide enough space for 2 pictures per row*/
+    grid-template-rows: repeat(auto-fit, minmax(225px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(415px, 1fr));
+
+     /*gap of 10px, padding of 5px*/
+    grid-gap: 10px;
+    padding: 5px;
+
+    /*color as such to stay consistent with other photos and elements alike*/
+    background-color: $animationcolor;
+}
+
+/*Images are 100% of their size, same ratio of length and height to prevent ugly distortion of the photos*/
+.restored img{
+    width: 100%;
+    height: 100%;
+}
+
+/* used for main to display it as inline */
+main {
+    display: inline-block;
+}
+
+/* used to style the navigation links on the menu bar */
+nav a {
+    padding: 7.5px;
+    margin: 7.5px;
+    margin-top: 22.5px;
+    font-weight: bold;
+    width: auto;
+    font-size: 22.5px;
+    height: 22.5px;
+    background-color: #c4c4c4;
+    color: $animationcolor;
+    text-align: center;
+    clear: both;
+    display: block;
+}
+
+/* this is what creates the big black nav bar, positioning it as fixed, its size, color, etc */
+nav {
+    background-color: $animationcolor;
+    padding: 1px;
+    width: 244px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+/* styles the links by removing the automatic bullet, changing font, font-style */
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: $font;
+}
+
+
+/* styles the heading 1, font, font-size, margin added supporting website prefixes*/
+h1{
+    font-size: 225%;
+    margin-top: 30px;
+    margin: 23px;
+    padding: 10px;
+    margin-right: 0px;
+    font-family: $font;
+    position: -webkit- sticky;
+    -o-animation-name: colorchange;
+    -moz-animation-name: colorchange;
+    -webkit-animation-name: colorchange;
+    animation-name: colorchange;
+    position: sticky;
+    background-color: $animationcolor;
+    top: 0px;
+    -moz-animation-duration: 1s;
+    -moz-animation-delay: 2s;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 2s;
+    -webkit-animation-fill-mode: forwards;
+    -o-animation-duration: 1s;
+    -o-animation-delay: 2s;
+    -o-animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+/* styles the paragraphs in divs and includes the color change animation. added supporting website prefixes */
+div p{
+    padding: 30px;
+    margin-left: 22.5px;
+    background-color: $animationcolor;
+    -o-animation-name: colorchange;
+    -moz-animation-name: colorchange;
+    -webkit-animation-name: colorchange;
+    animation-name: colorchange;
+    font-size: 135%;
+    font-family: $font;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    -moz-animation-duration: 1s;
+    -moz-animation-delay: 2s;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 2s;
+    -webkit-animation-fill-mode: forwards;
+    -o-animation-duration: 1s;
+    -o-animation-delay: 2s;
+    -o-animation-fill-mode: forwards;
+}
+
+/* Animation for changing color of paragraphs and main heading in divs. code sourced from: https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation1*/
+/* Animation supposedly has a smooth transition on w3, but here its quite choppy with no smooth transition. added supporting website prefixes*/
+@keyframes colorchange {
+    from {background-color: $animationcolor;}
+    to {background-color: $textbgcolor;}
+}
+
+/* to support browsers */
+@-webkit-keyframes colorchange {
+    from {background-color: $animationcolor;}
+    to {background-color: $textbgcolor;}
+}
+
+/* to support mozilla firefox */
+@-moz-keyframes colorchange {
+    from {background-color: $animationcolor;}
+    to {background-color: $textbgcolor;}
+}
+
+/* to support opera mobile */
+@-o-keyframes colorchange {
+    from {background-color: $animationcolor;}
+    to {background-color: $textbgcolor;}
+}
+
+/* styles the heading 2 and changes, font, font size and margin */
+h2{
+    font-size: 187.5%;
+    margin: 30px;
+    margin-top: 15px;
+    font-family: $font;
+}
+
+/* For photos of consoles that have been repaired/refurbished, creates a bottom margin and left margin to properlly layout the photos. */
+.repair {
+    margin: 0 auto;
+    margin-bottom: 15px;
+    margin-left: 22.5px;
+    background-color:#393939;
+    padding: 5px;
+    display: inline-block;
+}
+
+/* used for transition effect on photos for 3d shadow*/
+/* CODE SOURCED FROM: https://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/ ALL CONTENT OWNED BY THEIR RESPECTIVE OWNERS. Added supporting webiste prefixes*/
+.repair:hover{
+    box-shadow:
+        1px 1px  #d8544a,
+        2px 2px  #d8544a,
+        3px 3px  #d8544a;
+    -moz-box-shadow:
+        1px 1px  #d8544a,
+        2px 2px  #d8544a,
+        3px 3px  #d8544a;
+    -webkit-box-shadow:
+        1px 1px  #d8544a,
+        2px 2px  #d8544a,
+        3px 3px  #d8544a;
+    -webkit-transform: translateX(-3px);
+    -moz-transform: translateX(-3px);
+    -ms-transform: translateX(-3px);
+    transform: translateX(-3px);
+    transition: width 1s, height 1s, transform 1s;
+    -moz-transition: width 1s, height 1s, transform 1s;
+    -o-transition: width 1s, height 1s, transform 1s;
+    -webkit-transition: width 1s, height 1s, transform 1s;
+}
+
+/* styles the seperate link by changing font size, font, and ads margin to the left */
+a{
+    font-family: $font;
+    font-size: 135%;
+    margin-left: 22.5px;
+}
+
+/* styling the hovered link on menu bar */
+nav a:hover, nav a:focus {
+    background-color: #ffa743;
+    color: black;
+}
+
+/* used to style visited links on pages */
+nav a:visited {
+    color: #d8544a;
+}
